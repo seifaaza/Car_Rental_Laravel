@@ -50,6 +50,12 @@
                 top: 0%;
                 z-index: 999;
             }
+            .card{
+                transition: 500ms all;
+            }
+            .card:hover{
+                transform: scale(1.03);
+                filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.03));            }
     </style>
 </head>
 <body>
