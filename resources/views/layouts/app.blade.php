@@ -51,7 +51,8 @@
                 z-index: 999;
             }
             .card{
-                transition: 500ms all;
+                transition-duration: 500ms ;
+                transition-property: transform, filter;
             }
             .card:hover{
                 transform: scale(1.03);
