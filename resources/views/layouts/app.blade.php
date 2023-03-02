@@ -20,6 +20,36 @@
                 display: grid;
                 grid-template-columns:  repeat( auto-fit, minmax(250px, 1fr) );
             }
+            .carousel-item{
+                width: 100%;
+                height: 400px;
+                background-size: cover;
+            }
+            .carousel{
+                width: fit-content;
+                overflow: hidden;
+            }
+            @media(min-width:768px){
+                .carousel{
+                    width: 25% !important;
+                }
+            }
+            .header-bg{
+                background-image: url('img/bg.jpg');
+                background-size: cover;
+                width: 100%;
+            }
+            .header{
+                height: 100%;
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0.377);
+                backdrop-filter: blur(15px)
+            }
+            .navbar{
+                position: sticky;
+                top: 0%;
+                z-index: 999;
+            }
     </style>
 </head>
 <body>
@@ -109,9 +139,12 @@
 
 
 
-        <main class="container py-4">
+        <main class="mb-5">
             @yield('content')
         </main>
+        <footer style="height:700px" class="bg-danger">
+            <h1 class="alert text-light text-center">Footer</h1>
+        </footer>
     </div>
 </body>
 </html>

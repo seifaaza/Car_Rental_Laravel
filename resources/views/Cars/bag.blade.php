@@ -1,5 +1,7 @@
 @extends('layouts.app')
 @section('content')
 {{-- {{ Auth::user()->name }} --}}
-<h1 class="alert text-danger text-center">Your bag</h1>
+<div class="container vh-100 py-5">
+<h1 class=" text-danger text-center pb-4">Your bag</h1>
+</div>
 @endsection

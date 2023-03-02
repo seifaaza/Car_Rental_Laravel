@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
-<h1 class="alert text-danger text-center">Discover our cars</h1>
+<div class="container vh-100 py-5">
+<h1 class=" text-danger text-center pb-4">Discover our cars</h1>
 <div class="row gap-4">
     @foreach($cars as $item)
     <div class="card" >
@@ -22,6 +23,7 @@
         </div>
       </div>
   @endforeach
+</div>
 </div>
 
 @endsection

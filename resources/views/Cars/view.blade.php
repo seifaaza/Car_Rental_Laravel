@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-<div class="w-75 mx-auto">
+<div class="container w-75 py-5 mx-auto vh-100">
     <a href="{{url('/cars')}}" class="btn btn-secondary">Back</a>
     <div class="card mt-5" >
         <img src="..." class="card-img-top" alt="...">
