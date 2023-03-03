@@ -33,9 +33,10 @@ class CarsController extends Controller
     }
 
     public function profil($id){
-        $car= Car::find($id);
+        $cars = Car::all();
+        $car = Car::find($id);
         $owner= Owner::find($id);
-        return view('owners.profil', compact('car', 'owner'));
+        return view('owners.profil', compact('cars', 'owner', 'car'));
     }
 
 
