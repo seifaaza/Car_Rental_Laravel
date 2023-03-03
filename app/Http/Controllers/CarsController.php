@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Car;
-use App\Models\User;
+use App\Models\Owner;
 
 class CarsController extends Controller
 {
@@ -12,7 +12,7 @@ class CarsController extends Controller
 
     public function home()
     {
-        return view('main.interface');
+        return view('main.home');
     }
     public function about()
     {
@@ -28,7 +28,14 @@ class CarsController extends Controller
     public function show( $id)
     {
         $car= Car::find($id);
-        return view('cars.view', compact('car'));
+        $owner= Owner::find($id);
+        return view('cars.info', compact('car', 'owner'));
+    }
+
+    public function profil($id){
+        $car= Car::find($id);
+        $owner= Owner::find($id);
+        return view('owners.profil', compact('car', 'owner'));
     }
 
 

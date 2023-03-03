@@ -1,0 +1,57 @@
+.row{
+    display: grid;
+    grid-template-columns:  repeat( auto-fit, minmax(250px, 1fr) );
+}
+.carousel-item{
+    width: 100%;
+    height: 700px;
+    background-size: cover;
+}
+.carousel{
+    width: fit-content;
+    overflow: hidden;
+}
+@media(min-width:576px){
+    .carousel{
+        width: 25% !important;
+    }
+    .carousel-item{
+        height: 400px;
+    }
+    .header-content, .info{
+        width: 75% !important;
+    }
+    .rent, .owner, .reviews{
+        width: 50% !important;
+    }
+
+}
+.header-bg{
+    background-image: url('img/bg.jpg');
+    background-size: cover;
+    width: 100%;
+}
+.header{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.693);
+    backdrop-filter: blur(15px)
+}
+.navbar{
+    position: sticky;
+    top: 0%;
+    z-index: 999;
+}
+.cars-card{
+    transition-duration: 500ms ;
+    transition-property: transform, filter;
+}
+.cars-card:hover{
+    transform: scale(1.03);
+    filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.03));            }
+.bg-light{
+    background-color: #ebecee !important;
+}
+.text-dark{
+    color: #1e293b;
+}

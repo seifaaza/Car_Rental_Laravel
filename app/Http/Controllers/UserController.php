@@ -25,7 +25,7 @@ class UserController extends Controller
         return view('cars.rent', compact('car',  'user'));
     }
 
-    
+
     public function create()
     {
         //

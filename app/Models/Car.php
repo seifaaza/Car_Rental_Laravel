@@ -7,5 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Car extends Model
 {
-    use HasFactory;
+    public function owners()
+    {
+        return $this->belongsTo(Owner::class, 'owner_id', 'id');
+    }
 }

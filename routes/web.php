@@ -12,9 +12,11 @@ Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])-
 
 Route::get('/about', [App\Http\Controllers\CarsController::class, 'about'])->name('about');
 Route::get('/cars', [App\Http\Controllers\CarsController::class, 'cars'])->name('cars');
-Route::get('/view/{id}', [App\Http\Controllers\CarsController::class, 'show']);
-
+Route::get('/info/{id}', [App\Http\Controllers\CarsController::class, 'show']);
+Route::get('/profil/{id}', [App\Http\Controllers\CarsController::class, 'profil']);
 
 Route::get('/rent/{id}', [App\Http\Controllers\UserController::class, 'rent']);
-Route::get('/view/rent/{id}', [App\Http\Controllers\UserController::class, 'rent']);
 Route::get('/bag', [App\Http\Controllers\UserController::class, 'bag'])->name('bag');
+
+
+
