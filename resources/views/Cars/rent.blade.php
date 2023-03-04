@@ -8,11 +8,11 @@
     <h4>Car : {{$car->name}} {{$car->model}}</h4>
     <label for="" class="mt-3">Client</label>
     <input type="text" name="name" placeholder="Enter the client name" value="{{ Auth::user()->name }}" class="form-control"><br>
-    <label for="">Start date</label>
+    <label for="" class="mt-3">Start date</label>
     <input type="date" name="id"  class="form-control"><br>
-    <label for="">End date</label>
+    <label for="" class="mt-3">End date</label>
     <input type="date" name="id"  class="form-control"><br>
-    <button class="btn btn-danger">Submit</button>
+    <button class="btn btn-danger mt-3">Submit</button>
 </form>
 </div>
 @endsection

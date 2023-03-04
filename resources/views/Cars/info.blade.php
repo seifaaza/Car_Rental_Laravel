@@ -33,7 +33,7 @@
             </div>
             <div class="mt-3">
             <div >
-                <a href="{{url('profil',['id'=>$car->id])}}" class="btn  btn-danger">View profil</a>
+                <a href="{{url('profil',['id'=>$car->owner_id])}}" class="btn  btn-danger">View profil</a>
               </div>
             </div>
         </div>

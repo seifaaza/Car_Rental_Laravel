@@ -9,11 +9,11 @@ use App\Models\Owner;
 class CarsController extends Controller
 {
 
-
     public function home()
     {
         return view('main.home');
     }
+
     public function about()
     {
         return view('main.about');
@@ -25,20 +25,17 @@ class CarsController extends Controller
         return view('cars.cars', compact('cars'));
     }
 
-    public function show( $id)
+    public function show($id)
     {
-        $car= Car::find($id);
-        $owner= Owner::find($id);
+        $car = Car::find($id);
+        $owner = Owner::find($id);
         return view('cars.info', compact('car', 'owner'));
     }
 
-    public function profil($id){
-        $cars = Car::all();
-        $car = Car::find($id);
-        $owner= Owner::find($id);
-        return view('owners.profil', compact('cars', 'owner', 'car'));
+    public function profil($id)
+    {
+        $owner = Owner::find($id);
+        $cars = Car::where('owner_id','=',$id)->get();
+        return view('owners.profil', compact('cars', 'owner'));
     }
-
-
-
-    }
+}
