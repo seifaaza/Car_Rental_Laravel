@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <link rel="icon" href="img/bg.jpg" />
+    <link rel="icon" href="svg/logo-red.svg" />
     <title>Luxury Car</title>
 
     <!-- Fonts -->
@@ -120,7 +120,9 @@ button:hover{
     <div id="app " class="overflow-hidden">
         <nav class="navbar navbar-expand-lg bg-body-tertiary bg-danger ">
             <div class="container-fluid">
-              <a class="navbar-brand text-light" href="/">Home</a>
+              <a class="navbar-brand icon" href="/">
+                <img src="svg/logo-light.svg" alt="">
+            </a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
