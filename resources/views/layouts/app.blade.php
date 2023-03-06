@@ -7,15 +7,16 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Car rental</title>
+    <link rel="icon" href="img/bg.jpg" />
+    <title>Luxury Car</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Exo:wght@300&family=Genos:ital,wght@0,100;0,400;1,600&display=swap" rel="stylesheet">
 
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+
+
     <link rel="stylesheet" href="resources/css/app.css">
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <style>
@@ -34,7 +35,10 @@
         nav a:hover{
             opacity: 0.8;
         }
-.row{
+    .container{
+        padding: 1.5rem;
+    }
+.row, .row-x{
     display: grid;
     grid-template-columns:  repeat( auto-fit, minmax(250px, 1fr) );
 }
@@ -60,6 +64,9 @@
     .rent, .owner, .reviews{
         width: 50% !important;
     }
+    .row-x{
+        grid-template-columns:  repeat( auto-fit, minmax(250px, 300px) );
+    }
 
 }
 .header-bg{
@@ -79,11 +86,12 @@
     top: 0%;
     z-index: 999;
 }
-.cars-card{
+
+button{
     transition-duration: 500ms ;
     transition-property: transform, filter;
 }
-.cars-card:hover{
+button:hover{
     transform: scale(1.03);
     filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.03));            }
 .bg-light{
@@ -92,11 +100,24 @@
 .text-dark{
     color: #1e293b;
 }
-
+#trash{
+    width: 50px;
+    height: 50px;
+}
+.icon{
+    width: fit-content;
+    align-self: flex-end;
+}
+.icon img{
+    height: 2rem;
+}
+.icon:hover{
+    opacity: 0.8;
+}
     </style>
 </head>
-<body>
-    <div id="app">
+<body >
+    <div id="app " class="overflow-hidden">
         <nav class="navbar navbar-expand-lg bg-body-tertiary bg-danger ">
             <div class="container-fluid">
               <a class="navbar-brand text-light" href="/">Home</a>
@@ -113,6 +134,7 @@
                     <a class="nav-link text-light" href="{{url('/about')}}">About</a>
                   </li>
                   <li class="nav-item">
+
                     <a class="nav-link text-light" href="{{url('/contact')}}">Contact us</a>
                   </li>
 
@@ -189,5 +211,6 @@
             <h1 class="alert text-light text-center">Footer</h1>
         </footer>
     </div>
+    <script src="/lottie.js"></script>
 </body>
 </html>

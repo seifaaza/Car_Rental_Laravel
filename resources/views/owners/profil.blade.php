@@ -15,28 +15,26 @@
 
 
 
-<div class="row gap-4">
+<div class="row-x gap-4">
     @foreach($cars as $item)
-    <div class="card cars-card " >
-        <div class="row g-0">
-          <div class="col-md-4 w-100">
+    <button class="card flex-column" onclick="window.location='{{url('info',['id'=>$item->id])}}'" >
+          <div class="col-md-4 w-100 flex-fill d-flex align-items-center">
             <img src="/img/{{$item->image}}.png" class="img-fluid rounded-start " alt="...">
           </div>
-          <div class="col-md-8">
-            <div class="card-body">
+          <div class="col-md-8 align-item-end">
+            <div class="card-body text-start">
               <h5 class="card-title">{{$item->name}}</h5>
               <p class="card-text">{{$item->price}} MAD</p>
               <div class="d-flex gap-2">
 
-                  <a href="info/{{$item->id}}" class="btn  btn-outline-danger">Info</a>
-                  <a href="rent/{{$item->id}}" class="btn  btn-danger">Rent</a>
+                  <a href="{{url('info',['id'=>$item->id])}}" class="btn  btn-outline-danger">Info</a>
+                  <a href="{{url('rent',['id'=>$item->id])}}" class="btn  btn-danger">Rent</a>
                 </div>
             </div>
           </div>
-        </div>
-      </div>
+      </button>
   @endforeach
-</div>
+    </div>
 
 </div>
 @endsection

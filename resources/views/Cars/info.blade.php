@@ -17,8 +17,10 @@
         </ul>
         <div class="card-body">
             <div class="d-flex gap-2">
-
-                <a class="btn  btn-outline-danger">Save</a>
+                <form action="{{url('save',['id'=>$car->id])}}" method="post">
+                    @csrf
+                    <button class="btn btn-outline-danger">Save</button>
+                </form>
                 <a href="{{url('rent',['id'=>$car->id])}}" class="btn  btn-danger">Rent</a>
               </div>
         </div>
