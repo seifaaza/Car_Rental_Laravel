@@ -5,7 +5,6 @@
         <div class="container d-flex flex-column gap-5">
             <div class=" position-relative d-flex flex-column flex-sm-row align-items-center justify-content-center gap-5">
                 <div class="header-content w-100 d-flex flex-column text-center text-sm-start gap-1 ">
-
                     <h1 class="text-danger title ">Luxury Car</h1>
                     <h4 class="mt-2">Car rental agency</h4>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta minima laudantium officiis ipsam. Labore et, culpa sed odio dolorem exercitationem nulla laudantium maxime incidunt magnam quasi reprehenderit harum quae quod, Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, maxime.</p>

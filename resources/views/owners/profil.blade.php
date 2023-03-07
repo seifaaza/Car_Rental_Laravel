@@ -19,22 +19,28 @@
 
 <div class="row-x gap-4">
     @foreach($cars as $item)
-    <button class="card flex-column" onclick="window.location='{{url('info',['id'=>$item->id])}}'" >
-          <div class="col-md-4 w-100 flex-fill d-flex align-items-center">
-            <img src="/img/{{$item->image}}.png" class="img-fluid rounded-start " alt="...">
-          </div>
-          <div class="col-md-8 align-item-end">
-            <div class="card-body text-start">
-              <h5 class="card-title">{{$item->name}}</h5>
-              <p class="card-text">{{$item->price}} MAD</p>
-              <div class="d-flex gap-2">
-
-                  <a href="{{url('info',['id'=>$item->id])}}" class="btn  btn-outline-danger">Info</a>
-                  <a href="{{url('rent',['id'=>$item->id])}}" class="btn  btn-danger">Rent</a>
-                </div>
-            </div>
-          </div>
-      </button>
+    <button class="card p-2 card-btn flex-column"
+    onclick="window.location='{{url('info',['id'=>$item->id])}}'"
+     >
+         <div class="col-md-4 w-100 flex-fill d-flex align-items-center">
+           <img src="/img/{{$item->image}}.png" class="img-fluid rounded-start " alt="...">
+         </div>
+         <div class="py-3 align-item-end w-100 d-flex justify-content-between">
+           <div class="text-start ">
+             <h5 class="card-title">{{$item->name}}</h5>
+             <p class="card-text">{{$item->price}} MAD</p>
+           </div>
+               <div class="card-icons d-flex gap-2 justify-content-end align-self-end" >
+                   <a href="{{url('rent',['id'=>$item->id])}}" class="btn
+                   btn-danger d-flex gap-1 btn-rent" title="Rent">
+                       <img src="/svg/rent.svg" width="15px" class="scale" alt="">
+                   </a>
+                   <a href="{{url('save',['id'=>$item->id])}}" class="d-flex gap-1 btn-rent" title="Save">
+                       <img src="/svg/save.svg" class="icon" alt="">
+                   </a>
+               </div>
+         </div>
+       </button>
   @endforeach
     </div>
 
