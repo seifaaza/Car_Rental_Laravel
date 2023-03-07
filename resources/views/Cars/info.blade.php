@@ -2,7 +2,9 @@
 @section('content')
 
 <div class="container info w-100 py-5 mx-auto ">
-    <a href="{{url('/cars')}}" class="btn btn-secondary">Back</a>
+    <a href="{{url('/cars')}}" title="Back">
+        <img src="/svg/back.svg" class="icon" alt="">
+    </a>
     <div class="card mt-3 p-3 d-flex flex-column align-items-center flex-md-row gap-3" >
         <div ><img src="/img/{{$car->image}}.png" class="card-img-top " style="width: 20rem" alt="..."></div>
         <div >
@@ -17,11 +19,14 @@
         </ul>
         <div class="card-body">
             <div class="d-flex gap-2">
-                <a href="{{url('rent',['id'=>$car->id])}}" class="btn  btn-danger">Rent</a>
-                <form action="{{url('save',['id'=>$car->id])}}" method="post">
-                    @csrf
-                    <input type="submit" value="Save" class="btn btn-outline-danger">
-                </form>
+                <a href="{{url('rent',['id'=>$car->id])}}" class="btn
+                    btn-danger d-flex gap-1 btn-rent" title="Rent">
+                    <span>Rent</span>
+                        <img src="/svg/rent.svg" width="15px" class="scale" alt="">
+                    </a>
+                    <a href="{{url('save',['id'=>$car->id])}}" class="d-flex gap-1" title="Save">
+                        <img src="/svg/save.svg" class="icon" alt="">
+                    </a>
               </div>
         </div>
       </div>
@@ -35,7 +40,12 @@
             </div>
             <div class="mt-3">
             <div >
-                <a href="{{url('profil',['id'=>$car->owner_id])}}" class="btn  btn-danger">View profil</a>
+
+                <a style="width: fit-content" href="{{url('profil',['id'=>$car->owner_id])}}" class="btn
+                    btn-danger d-flex gap-1" >
+                    <span>Profile</span>
+                        <img src="/svg/profil.svg" width="15px" class="scale " alt="">
+                    </a>
               </div>
             </div>
         </div>

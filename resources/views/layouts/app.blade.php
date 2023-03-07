@@ -130,7 +130,7 @@
 .scale{
     transition: 200ms;
 }
-.icon:hover, .btn-rent:hover img{
+.icon:hover, .btn:hover img{
     transform: scale(0.9);
 }
 .svg-icon{
@@ -152,7 +152,7 @@
         <nav class="navbar navbar-expand-lg bg-body-tertiary bg-danger ">
             <div class="container-fluid">
               <a class="navbar-brand svg-icon" href="/">
-                <img src="svg/logo-light.svg" width="28px" alt="">
+                <img src="{{url('svg/logo-light.svg')}}" width="28px" alt="">
             </a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
