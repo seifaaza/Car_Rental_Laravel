@@ -23,6 +23,11 @@
         *{
             font-family: 'Exo', sans-serif;
         }
+        :root{
+            --light: #f3f6fc;
+            --dark: #1e293b;
+            --danger: #dc3545;
+        }
         .title{
             font-family: 'Genos', sans-serif;
             font-weight: 600;
@@ -67,7 +72,6 @@
     .row-x{
         grid-template-columns:  repeat( auto-fit, minmax(250px, 300px) );
     }
-
 }
 .header-bg{
     background-image: url('img/bg.jpg');
@@ -87,41 +91,68 @@
     z-index: 999;
 }
 
-button{
+.card-btn{
     transition-duration: 500ms ;
     transition-property: transform, filter;
 }
-button:hover{
+.card-btn:hover{
     transform: scale(1.03);
     filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.03));            }
 .bg-light{
-    background-color: #ebecee !important;
+    background-color: var(--light) !important;
 }
 .text-dark{
-    color: #1e293b;
+    color: var(--dark) !important;
 }
-#trash{
-    width: 50px;
-    height: 50px;
+
+
+.options:hover + .dropdown-options, .dropdown-options:hover{
+/* .dropdown-options, .dropdown-options:hover{ */
+    width: 100px !important;
+    right: 0%;
+    display: block;
+    bottom: -5%;
+    filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.09)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.03));
+    min-width: fit-content;
+ }
+.dropdown-i a {
+   color: #dc3545;
+   filter: grayscale(100%) opacity(0.7);
+   text-decoration: none;
+   padding: 0.20rem 0.6rem;
+}
+.dropdown-i a:hover  {
+    filter: none;
+}
+.dropdown-i:hover  {
+    background-color: white;
+}
+.scale{
+    transition: 200ms;
+}
+.icon:hover, .btn-rent:hover img{
+    transform: scale(0.9);
+}
+.svg-icon{
+    width: 1rem;
 }
 .icon{
-    width: fit-content;
-    align-self: flex-end;
-}
-.icon img{
-    height: 2rem;
+    width: 25px;
+    filter: grayscale(100%) opacity(0.5);
 }
 .icon:hover{
-    opacity: 0.8;
+    filter: none;
+
 }
+
     </style>
 </head>
 <body >
     <div id="app " class="overflow-hidden">
         <nav class="navbar navbar-expand-lg bg-body-tertiary bg-danger ">
             <div class="container-fluid">
-              <a class="navbar-brand icon" href="/">
-                <img src="svg/logo-light.svg" alt="">
+              <a class="navbar-brand svg-icon" href="/">
+                <img src="svg/logo-light.svg" width="28px" alt="">
             </a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

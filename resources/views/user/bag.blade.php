@@ -14,7 +14,7 @@
             <h5 class="card-title">{{$item->name}}</h5>
             <p class="card-text text-muted mt-2">Saved at : <br>
                 <small class="text-muted text-wrap">{{$item->created_at}} </small> </p>
-            <a href="{{url('bag/delete', $item->id)}}" class="icon" ><img src="/svg/trash.svg" class=" align-items-end" alt=""></a>
+            <a href="{{url('bag/delete', $item->id)}}" class="icon align-self-end" ><img src="/svg/trash.svg"  alt=""></a>
 
         </div>
     </div>

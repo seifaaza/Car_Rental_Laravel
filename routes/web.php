@@ -17,7 +17,7 @@ Route::get('/info/{id}', [App\Http\Controllers\CarsController::class, 'show']);
 Route::get('/profil/{id}', [App\Http\Controllers\CarsController::class, 'profil']);
 
 Route::get('/rent/{id}', [App\Http\Controllers\UserController::class, 'rent']);
-Route::post('/save/{id}', [App\Http\Controllers\UserController::class, 'save'])->name('save');
+Route::get('/save/{id}', [App\Http\Controllers\UserController::class, 'save'])->name('save');
 Route::get('/bag', [App\Http\Controllers\UserController::class, 'bag']);
 Route::get('/bag/delete/{id}', [App\Http\Controllers\UserController::class, 'destroy']);
 
