@@ -6,7 +6,11 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Car;
 use App\Models\User;
+use App\Models\Review;
 use App\Models\Bag;
+use App\Models\Tag;
+use App\Models\Owner;
+use Symfony\Contracts\Service\Attribute\Required;
 
 class UserController extends Controller
 {
@@ -20,52 +24,76 @@ class UserController extends Controller
         $user = Auth::user();
         $car = Car::find($id);
 
-        $bag=new Bag();
-        $bag -> id = $car->id;
-        $bag -> name = $car -> name;
-        $bag -> description = $car -> description;
-        $bag -> model = $car -> model;
-        $bag -> type = $car -> type;
-        $bag -> price = $car -> price;
-        $bag -> image = $car -> image;
-        $bag -> owner_id = $car -> owner_id;
-        $bag -> user_id = $user -> id;
+        // $bag=new Bag();
+        // $bag -> car_id = $car->id;
+        // $bag -> user_id = $user -> id;
 
-        $bag -> save();
-        return redirect('/cars');
+        // $bag -> save();
+        return redirect()->back();
     }
 
-    public function bag(){
-        $user = Auth::user();
-        $bags = Bag::where('user_id','=',$user->id)->get();
-        return view('user.bag', compact('bags'));
+
+    public function saved($id){
+        $user = User::findOrFail($id);
+        $cars = Car::all();
+        return view('user.saved', compact('user', 'cars'));
     }
 
-    public function destroy($id)
+    public function deleteSaved($id)
     {
-        $bag= Bag::find($id);
-        $bag->delete();
-        return redirect('/bag');
+        // $id= Car::findOrFail($id);
+        // DB::table('orders')->delete()->where('id' == $id);
+        // return redirect()->back();
     }
+
+    // public function destroy($id)
+    // {
+    //     $review= Review::find($id);
+    //     $review->delete();
+    //     return redirect('/info');
+    // }
 
     public function rent( $id)
     {
+        $car= Car::findOrFail($id);
+        return view('user.rent', compact('car'));
+    }
+    public function shareReview(Request $request, $id)
+    {
+        $owner = Owner::findOrFail($id);
+        $tags = Tag::all();
+        $car = Car::findOrFail($id);
+        $userId =  Auth::user()->id;
 
-        $user= User::find($id);
-        $car= Car::find($id);
-        return view('user.rent', compact('car', 'user'));
+        // $request -> validate([
+        //     'review' => 'required'
+        // ]);
+
+        $review = new Review();
+        $review -> review = strip_tags($request -> review) ;
+        $review -> user_id = Auth::user() -> id ;
+        $review -> car_id = $car -> id ;
+        $review -> save();
+
+        $reviews = Review::where('car_id','=',$id)->get();
+        return redirect()->back()->with('success', 'successfully inserted');
     }
 
-
-    public function create()
+    public function editReview(Request $request, $id )
     {
-        //
+        $review = Review::findOrFail($id);
+        $user = Auth::user();
+
+        $review -> review = $request -> review;
+        $review -> save();
+        return redirect()->back();
     }
 
-
-    public function store(Request $request)
+    public function deleteReview($id)
     {
-        //
+        $review = Review::findOrFail($id);
+        $review->delete();
+        return redirect()->back();
     }
 
     /**

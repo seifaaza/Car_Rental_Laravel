@@ -1,11 +1,11 @@
 @extends('layouts.app')
 @section('content')
-<div class="header-bg">
+<div class="header-bg ">
     <div class=" header py-5">
         <div class="container d-flex flex-column gap-5">
             <div class=" position-relative d-flex flex-column flex-sm-row align-items-center justify-content-center gap-5">
                 <div class="header-content w-100 d-flex flex-column text-center text-sm-start gap-1 ">
-                    <h1 class="text-danger title ">Luxury Car</h1>
+                    <h1 class="text-danger title " >Luxury Car</h1>
                     <h4 class="mt-2">Car rental agency</h4>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta minima laudantium officiis ipsam. Labore et, culpa sed odio dolorem exercitationem nulla laudantium maxime incidunt magnam quasi reprehenderit harum quae quod, Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, maxime.</p>
                     <a href="{{url('/about')}}" class="btn btn-danger align-self-sm-start">More info</a>
@@ -21,16 +21,23 @@
                   </div>
                 </div>
               </div>
-
-
-
             </div>
-
-
-            </div>
+        </div>
     </div>
 </div>
-<div class="container py-5 ">
+
+<div class="vh-100 container my-5">
+    <div class="">
+    </div>
+</div>
+
+<div class="header-bg vh-100 ">
+    <div class=" header ">
+
+    </div>
+</div>
+
+<div class="container my-5">
     <h2 class="alert text-danger text-center fw-semibold">Lorem ipsum dolor sit amet consectetur.</h2>
     <div class="d-flex flex-md-row flex-column gap-4">
         <div class="card home-card bg-light"  >
@@ -51,10 +58,28 @@
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             </div>
           </div>
-
-
     </div>
-
 </div>
 
+
+<div class="header-bg vh-100 ">
+    <div class=" header ">
+    </div>
+</div>
+
+<div class="vh-100 container my-5">
+    <div class="">
+    </div>
+</div>
+
+
 @endsection
+
+
+
+
+
+
+
+
+

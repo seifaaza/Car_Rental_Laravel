@@ -3,23 +3,32 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\CarsController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\HomeController;
 
 Auth::routes();
 
-Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
+Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 
-Route::get('/',  [App\Http\Controllers\CarsController::class, 'home'])->name('home');
-Route::get('/home', [App\Http\Controllers\CarsController::class, 'home'])->name('home');
+Route::get('/',  [CarsController::class, 'home'])->name('home');
+Route::get('/home', [CarsController::class, 'home'])->name('home');
+Route::get('/about', [CarsController::class, 'about']);
+Route::get('/cars', [CarsController::class, 'cars'])->name('cars');
+Route::get('/info/{id}', [CarsController::class, 'show'])->name('info');
+Route::get('/profil/{id}', [CarsController::class, 'profil'])->name('profil');
+Route::get('/tags/{id}', [CarsController::class, 'tags'])->name('tags');
+Route::get('/category/{id}', [CarsController::class, 'category'])->name('category');
 
-Route::get('/about', [App\Http\Controllers\CarsController::class, 'about'])->name('about');
-Route::get('/cars', [App\Http\Controllers\CarsController::class, 'cars'])->name('cars');
-Route::get('/info/{id}', [App\Http\Controllers\CarsController::class, 'show']);
-Route::get('/profil/{id}', [App\Http\Controllers\CarsController::class, 'profil']);
+Route::get('/rent/{id}', [UserController::class, 'rent'])->name('rent');
+Route::get('/save/{id}', [UserController::class, 'save'])->name('save');
+Route::get('/saved/{id}', [UserController::class, 'saved'])->name('saved');
+Route::get('/saved/delete/{id}', [UserController::class, 'deleteSaved']);
+Route::post('/review/{id}', [UserController::class, 'shareReview']);
+Route::put('/editReview/{id}', [UserController::class, 'editReview']);
+Route::get('/review/delete/{id}', [UserController::class, 'deleteReview']);
 
-Route::get('/rent/{id}', [App\Http\Controllers\UserController::class, 'rent']);
-Route::get('/save/{id}', [App\Http\Controllers\UserController::class, 'save'])->name('save');
-Route::get('/bag', [App\Http\Controllers\UserController::class, 'bag']);
-Route::get('/bag/delete/{id}', [App\Http\Controllers\UserController::class, 'destroy']);
+
 
 
 

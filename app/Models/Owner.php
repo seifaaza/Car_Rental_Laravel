@@ -4,22 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-
-class Owner extends Model
+class Owners extends Model
 {
-    public function cars()
-    {
-        return $this->hasMany(Car::class, 'owner_id', 'id');
+    use HasFactory;
+    
+    public function cars(){
+        return $this->hasMany(Car::class, 'owner_id', 'id' );
     }
 }
-
-class User extends Authenticatable
+class Owner extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -53,16 +50,4 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 }
-
-
-
-
-
-
-
-
-
-
-
-
 

@@ -1,24 +1,14 @@
 @extends('layouts.app')
 @section('content')
-
-<div class="w-75 container mx-auto py-5 ">
-    <a href="{{ url()->previous() }}" title="Back">
-        <img src="/svg/back.svg" class="scale" width="22px" alt="">
-    </a>
-    <form action="" method="post" class="card p-4 mt-3">
-    <h1 class=" text-danger text-center pb-2 ">{{$owner->name}}</h1>
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item"><h5> Overview :</h5> {{$owner->description}}</li>
-        <li class="list-group-item"><h5> Email :</h5> {{$owner->email}}</li>
-        <li class="list-group-item"><h5> Contact :</h5> 0763849764</li>
-      </ul>
-</form>
-<h2 class="text-danger mt-5">{{$owner->name}}'s cars</h2>
-
-
-
-<div class="row-x gap-4">
-    @foreach($cars as $item)
+<div class="container py-5" >
+<h1 class=" text-danger text-center p-2 fw-semibold">Discover our cars</h1>
+<div class="alert main-bg sticky d-flex justify-content-center gap-3" >
+    @foreach($categories as $item)
+    <a href="{{route('category',['id'=>$item->id])}}" class="btn btn-outline-secondary rounded-3 {{ ($category->id)==($item->id) ? 'btn-secondary text-light' : "" }}" >{{$item->category}}</a>
+    @endforeach
+</div>
+<div class="row gap-4 m-0">
+    @foreach($cars->categories as $item)
     <button class="card px-3 card-btn flex-column rounded-4"
     onclick="window.location='{{route('info',['id'=>$item->id])}}'"
      >
@@ -45,7 +35,18 @@
          </div>
        </button>
   @endforeach
-    </div>
+
+
+
+
+
 
 </div>
+</div>
+
 @endsection
+
+
+
+
+
